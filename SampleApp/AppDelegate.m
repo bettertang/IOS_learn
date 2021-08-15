@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "CollectionViewController.h"
+#import "ScrollController.h"
 @interface AppDelegate ()<UITabBarControllerDelegate>
 
 @end
@@ -31,12 +32,17 @@
     self.myviewcontroler.tabBarItem.title = @"Navitagion";
     
     CollectionViewController *collectionVC = [[CollectionViewController alloc] init];
-    //collectionVC.view.backgroundColor = [UIColor blueColor];
+    ScrollController *scrollVC= [[ScrollController alloc] init];
+   
     
-    [mytabbarcon setViewControllers:@[self.myviewcontroler,collectionVC]];
+    
+    
+    
+    [mytabbarcon setViewControllers:@[self.myviewcontroler,collectionVC,scrollVC]];
+
+    
     
     mytabbarcon.delegate =self;
-    
      UINavigationController *mynavigationCon = [[UINavigationController alloc] initWithRootViewController:mytabbarcon];
     self.window.rootViewController = mynavigationCon;
     [self.window makeKeyAndVisible];

@@ -13,6 +13,9 @@
 		16DE573826C426D4001436B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16DE573626C426D4001436B0 /* LaunchScreen.storyboard */; };
 		16DE573B26C426D4001436B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DE573A26C426D4001436B0 /* main.m */; };
 		16DE576826C82648001436B0 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DE576726C82648001436B0 /* CollectionViewController.m */; };
+		16DE576B26C8E3F2001436B0 /* ScrollController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DE576A26C8E3F2001436B0 /* ScrollController.m */; };
+		16DE576E26C90DF1001436B0 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DE576D26C90DF1001436B0 /* MyTableViewCell.m */; };
+		16DE577126C983BB001436B0 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DE577026C983BB001436B0 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,12 @@
 		16DE573A26C426D4001436B0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		16DE576626C82648001436B0 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		16DE576726C82648001436B0 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		16DE576926C8E3F2001436B0 /* ScrollController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollController.h; sourceTree = "<group>"; };
+		16DE576A26C8E3F2001436B0 /* ScrollController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollController.m; sourceTree = "<group>"; };
+		16DE576C26C90DF1001436B0 /* MyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
+		16DE576D26C90DF1001436B0 /* MyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
+		16DE576F26C983BB001436B0 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		16DE577026C983BB001436B0 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +78,12 @@
 				16DE573A26C426D4001436B0 /* main.m */,
 				16DE576626C82648001436B0 /* CollectionViewController.h */,
 				16DE576726C82648001436B0 /* CollectionViewController.m */,
+				16DE576926C8E3F2001436B0 /* ScrollController.h */,
+				16DE576A26C8E3F2001436B0 /* ScrollController.m */,
+				16DE576C26C90DF1001436B0 /* MyTableViewCell.h */,
+				16DE576D26C90DF1001436B0 /* MyTableViewCell.m */,
+				16DE576F26C983BB001436B0 /* WebViewController.h */,
+				16DE577026C983BB001436B0 /* WebViewController.m */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -143,9 +158,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				16DE576826C82648001436B0 /* CollectionViewController.m in Sources */,
+				16DE577126C983BB001436B0 /* WebViewController.m in Sources */,
 				16DE573026C426D0001436B0 /* ViewController.m in Sources */,
 				16DE572A26C426D0001436B0 /* AppDelegate.m in Sources */,
+				16DE576E26C90DF1001436B0 /* MyTableViewCell.m in Sources */,
 				16DE573B26C426D4001436B0 /* main.m in Sources */,
+				16DE576B26C8E3F2001436B0 /* ScrollController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

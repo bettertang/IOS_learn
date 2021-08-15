@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "MyTableViewCell.h"
+#import "WebViewController.h"
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 @end
@@ -15,7 +17,7 @@
 NSDictionary* tableData;
 NSArray  *storys;
 
-static int count;
+//static int count;
 
 - (void)viewDidLoad {
      [super viewDidLoad];
@@ -69,20 +71,21 @@ static int count;
     return 100;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return storys.count;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+//    return 20;
+//}
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    NSString *story = [storys objectAtIndex:section];
-    return [[tableData objectForKey:story] count];
+
+//    NSString *story = [storys objectAtIndex:section];
+    //return [[tableData objectForKey:story] count];
+    return 20;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UIViewController *newVC = [[UIViewController alloc] init];
+    WebViewController *newVC = [[WebViewController alloc] init];
     newVC.title = [NSString stringWithFormat:@"%ld",indexPath.row];
     [self.navigationController pushViewController:newVC animated:NO];
 }
@@ -92,25 +95,33 @@ static int count;
     
 //    NSUInteger *section = indexPath.section;
 //    NSUInteger *row =
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ID" ];
+    MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ID" ];
     if(cell==nil){
-        cell =  [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ID"];
+        cell =  [[MyTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ID"];
     }
+    [cell layoutTableCell];
     
-    NSString *story = [storys objectAtIndex:indexPath.section];
-    
-    cell.detailTextLabel.text=[[tableData objectForKey:story] objectAtIndex:indexPath.row];
-   // cell.textLabel.text=@"主标题";
+//    NSString *story = [storys objectAtIndex:indexPath.section];
+//
+    //cell.detailTextLabel.text=[[tableData objectForKey:story] objectAtIndex:indexPath.row];
+    //cell.textLabel.text=@"主标题";
     return cell;
 }
 
 
+//
+//- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection
+//                      :(NSInteger)section
+//{
+//    return [storys objectAtIndex:section];
+//}
 
-- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection
-                      :(NSInteger)section
-{
-    return [storys objectAtIndex:section];
-}
+
+
+
+
+
+
 
 //
 //-(void) pushControler{
