@@ -10,8 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+@protocol MytableDelegate <NSObject>
+
+-(void) tableview:(UITableViewCell *) inputTBview deletebutton:(UIButton *)deletbutton message:(NSString *) mes;
+
+@end
+
 @interface MyTableViewCell : UITableViewCell
 -(void) layoutTableCell;
+@property(nonatomic,weak,readwrite) id<MytableDelegate> delegate;
 @end
 
 NS_ASSUME_NONNULL_END

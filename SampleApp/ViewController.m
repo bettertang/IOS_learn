@@ -9,13 +9,28 @@
 #import "ViewController.h"
 #import "MyTableViewCell.h"
 #import "WebViewController.h"
+#import "DeletView.h"
 
-@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate,MytableDelegate>
+
+@property(nonatomic,strong) UITableView *mytableview;
+@property(nonatomic,strong,readwrite) NSMutableArray *Darry;
 @end
 
 @implementation ViewController
 NSDictionary* tableData;
 NSArray  *storys;
+-(instancetype)init{
+    self = [super self];
+    if(self){
+        _Darry = @[].mutableCopy;
+        for(int i=0;i<5;++i){
+            [_Darry addObject:@(i)];
+        }
+    }
+    
+    return self;
+}
 
 //static int count;
 
@@ -47,11 +62,11 @@ NSArray  *storys;
 //    UITapGestureRecognizer *mytapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(pushControler)];
 //
 //    [view2 addGestureRecognizer:mytapGesture];
-    UITableView *mytableview = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    mytableview.delegate=self;
-    mytableview.dataSource=self;
+    _mytableview = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    _mytableview.delegate=self;
+    _mytableview.dataSource=self;
     
-    [self.view addSubview:mytableview];
+    [self.view addSubview:_mytableview];
     
    tableData = [NSDictionary dictionaryWithObjectsAndKeys:
    [NSArray arrayWithObjects:@"孙悟空" , @"猪八戒", @"牛魔王"
@@ -80,7 +95,7 @@ NSArray  *storys;
 
 //    NSString *story = [storys objectAtIndex:section];
     //return [[tableData objectForKey:story] count];
-    return 20;
+    return self.Darry.count;
 }
 
 
@@ -98,6 +113,8 @@ NSArray  *storys;
     MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ID" ];
     if(cell==nil){
         cell =  [[MyTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ID"];
+        
+        cell.delegate=self;
     }
     [cell layoutTableCell];
     
@@ -106,6 +123,25 @@ NSArray  *storys;
     //cell.detailTextLabel.text=[[tableData objectForKey:story] objectAtIndex:indexPath.row];
     //cell.textLabel.text=@"主标题";
     return cell;
+}
+
+
+-(void) tableview:(UITableViewCell *) inputTBview deletebutton:(UIButton *)deletbutton message:(nonnull NSString *)mes{
+    NSLog(@"收到代理信息: %@",mes);
+    
+    
+    DeletView *myDelView = [[DeletView alloc] initWithFrame:self.view.bounds];
+    CGRect rec = [inputTBview convertRect:myDelView.frame toView:nil];
+    
+    __weak typeof (self) wself = self;
+    [myDelView showDelView:rec.origin clickblock:^{
+       
+        __strong typeof (self) Sself = wself;
+        [Sself.Darry removeLastObject];
+        [Sself.mytableview deleteRowsAtIndexPaths:@[[Sself.mytableview indexPathForCell:inputTBview]] withRowAnimation:UITableViewRowAnimationAutomatic];
+        NSLog(@"执行成功");
+        
+    }];
 }
 
 

@@ -16,6 +16,7 @@
 		16DE576B26C8E3F2001436B0 /* ScrollController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DE576A26C8E3F2001436B0 /* ScrollController.m */; };
 		16DE576E26C90DF1001436B0 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DE576D26C90DF1001436B0 /* MyTableViewCell.m */; };
 		16DE577126C983BB001436B0 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DE577026C983BB001436B0 /* WebViewController.m */; };
+		16DE577426CAC24C001436B0 /* DeletView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DE577326CAC24C001436B0 /* DeletView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		16DE576D26C90DF1001436B0 /* MyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
 		16DE576F26C983BB001436B0 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		16DE577026C983BB001436B0 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		16DE577226CAC24C001436B0 /* DeletView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeletView.h; sourceTree = "<group>"; };
+		16DE577326CAC24C001436B0 /* DeletView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeletView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,8 @@
 				16DE576D26C90DF1001436B0 /* MyTableViewCell.m */,
 				16DE576F26C983BB001436B0 /* WebViewController.h */,
 				16DE577026C983BB001436B0 /* WebViewController.m */,
+				16DE577226CAC24C001436B0 /* DeletView.h */,
+				16DE577326CAC24C001436B0 /* DeletView.m */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 				16DE576E26C90DF1001436B0 /* MyTableViewCell.m in Sources */,
 				16DE573B26C426D4001436B0 /* main.m in Sources */,
 				16DE576B26C8E3F2001436B0 /* ScrollController.m in Sources */,
+				16DE577426CAC24C001436B0 /* DeletView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

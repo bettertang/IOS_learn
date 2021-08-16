@@ -40,7 +40,7 @@
         [self.deletButton setTitle:@"X" forState:UIControlStateNormal];
         [self.deletButton setTitle:@"V" forState:UIControlStateHighlighted];
         
-        
+        [self.deletButton addTarget:self action:@selector(clickDel:deletebutton:message:) forControlEvents:UIControlEventTouchUpInside];
        // self.RightLabel.backgroundColor=[UIColor greenColor];
         
         [self.contentView addSubview:self.LabelDetail];
@@ -50,6 +50,16 @@
     }
     return self;
 }
+
+
+
+-(void) clickDel:(UITableViewCell *) inputTBview deletebutton:(UIButton *)deletbutton message:(NSString *) mes{
+    mes= @"准备代理";
+    if(self.delegate && [self.delegate respondsToSelector:@selector(tableview:deletebutton:message:)]){
+        [self.delegate tableview:inputTBview deletebutton:deletbutton message:mes];
+    }
+}
+
 
 -(void) layoutTableCell{
     self.LabelDetail.text=@"YST 学习IOS";
