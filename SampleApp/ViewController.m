@@ -126,21 +126,18 @@ NSArray  *storys;
 }
 
 
--(void) tableview:(UITableViewCell *) inputTBview deletebutton:(UIButton *)deletbutton message:(nonnull NSString *)mes{
+-(void) tableviewCell:(UITableViewCell *) inputTBview deletebutton:(UIButton *)deletbutton message:(nonnull NSString *)mes{
     NSLog(@"收到代理信息: %@",mes);
-    
-    
     DeletView *myDelView = [[DeletView alloc] initWithFrame:self.view.bounds];
     CGRect rec = [inputTBview convertRect:myDelView.frame toView:nil];
-    
     __weak typeof (self) wself = self;
     [myDelView showDelView:rec.origin clickblock:^{
-       
-        __strong typeof (self) Sself = wself;
-        [Sself.Darry removeLastObject];
+    __strong typeof (self) Sself = wself;
+    [Sself.Darry removeLastObject];
+    if([Sself.mytableview indexPathForCell:inputTBview]){
         [Sself.mytableview deleteRowsAtIndexPaths:@[[Sself.mytableview indexPathForCell:inputTBview]] withRowAnimation:UITableViewRowAnimationAutomatic];
-        NSLog(@"执行成功");
-        
+                   NSLog(@"执行成功");
+        }
     }];
 }
 

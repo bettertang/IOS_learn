@@ -35,28 +35,40 @@
         self.RightLabel.font =  [UIFont systemFontOfSize:12];
         self.RightLabel.textColor = [UIColor grayColor];
         
-        self.deletButton =[[UIButton alloc] initWithFrame:CGRectMake(160, 80, 50, 20)];
-        self.deletButton.backgroundColor =[UIColor blueColor];
-        [self.deletButton setTitle:@"X" forState:UIControlStateNormal];
-        [self.deletButton setTitle:@"V" forState:UIControlStateHighlighted];
         
-        [self.deletButton addTarget:self action:@selector(clickDel:deletebutton:message:) forControlEvents:UIControlEventTouchUpInside];
+        [self.contentView addSubview:({
+            self.deletButton =[[UIButton alloc] initWithFrame:CGRectMake(160, 80, 50, 20)];
+                   self.deletButton.backgroundColor =[UIColor blueColor];
+                   [self.deletButton setTitle:@"X" forState:UIControlStateNormal];
+                   [self.deletButton setTitle:@"V" forState:UIControlStateHighlighted];
+            
+            [self.deletButton addTarget:self action:@selector(clickDel:) forControlEvents:UIControlEventTouchUpInside];
+            
+            self.deletButton.layer.cornerRadius = 10;
+            self.deletButton.layer.masksToBounds = YES;
+            self.deletButton;
+        })];
+        
+       
+        
+    
        // self.RightLabel.backgroundColor=[UIColor greenColor];
         
+        [self.contentView addSubview:self.deletButton];
         [self.contentView addSubview:self.LabelDetail];
         [self.contentView addSubview:self.leftLabel];
         [self.contentView addSubview:self.RightLabel];
-        [self.contentView addSubview:self.deletButton];
+       
     }
     return self;
 }
 
 
 
--(void) clickDel:(UITableViewCell *) inputTBview deletebutton:(UIButton *)deletbutton message:(NSString *) mes{
+-(void) clickDel:(NSString *) mes{
     mes= @"准备代理";
-    if(self.delegate && [self.delegate respondsToSelector:@selector(tableview:deletebutton:message:)]){
-        [self.delegate tableview:inputTBview deletebutton:deletbutton message:mes];
+    if(self.delegate && [self.delegate respondsToSelector:@selector(tableviewCell:deletebutton:message:)]){
+        [self.delegate tableviewCell:self   deletebutton:self.deletButton message:mes];
     }
 }
 

@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol MytableDelegate <NSObject>
 
--(void) tableview:(UITableViewCell *) inputTBview deletebutton:(UIButton *)deletbutton message:(NSString *) mes;
+-(void) tableviewCell:(UITableViewCell *) inputTBview deletebutton:(UIButton *)deletbutton message:(NSString *) mes;
 
 @end
 

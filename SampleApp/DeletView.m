@@ -46,7 +46,7 @@
 //    } ];
     self.DeleView.frame = CGRectMake(point.x, point.y, 0, 0);
     [UIView animateWithDuration:1.f delay:0.f options:UIViewAnimationOptionCurveEaseIn animations:^{
-        self.DeleView.frame = CGRectMake(point.x, point.y, 200, 200);
+        self.DeleView.frame = CGRectMake((self.frame.size.width-200)/2,(self.frame.size.height-200)/2, 200, 200);
     } completion:^(BOOL finished) {
         NSLog(@"动画播放完毕");
     }];
