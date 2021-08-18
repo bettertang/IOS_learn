@@ -10,16 +10,23 @@
 #import "MyTableViewCell.h"
 #import "WebViewController.h"
 #import "DeletView.h"
+#import "ListLoad.h"
+
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate,MytableDelegate>
 
 @property(nonatomic,strong) UITableView *mytableview;
 @property(nonatomic,strong,readwrite) NSMutableArray *Darry;
+@property(nonatomic,strong,readwrite) ListLoad *listLoad;
 @end
 
 @implementation ViewController
 NSDictionary* tableData;
 NSArray  *storys;
+
+
+#pragma mark - Init
+
 -(instancetype)init{
     self = [super self];
     if(self){
@@ -66,6 +73,8 @@ NSArray  *storys;
     _mytableview.delegate=self;
     _mytableview.dataSource=self;
     
+    self.listLoad = [[ListLoad alloc] init];
+    [self.listLoad Loadlist];
     [self.view addSubview:_mytableview];
     
    tableData = [NSDictionary dictionaryWithObjectsAndKeys:
