@@ -7,7 +7,7 @@
 //
 
 #import "Listitem.h"
-//数据解析
+
 @implementation Listitem
 
 -(void) confi:(NSDictionary*) dic{

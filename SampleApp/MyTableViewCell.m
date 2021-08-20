@@ -7,8 +7,6 @@
 //
 
 #import "MyTableViewCell.h"
-#import "Listitem.h"
-
 
 @interface MyTableViewCell()
 @property (nonatomic,strong,readwrite) UILabel *LabelDetail;
@@ -38,23 +36,25 @@
         self.RightLabel.textColor = [UIColor grayColor];
         
         
-//        [self.contentView addSubview:({
-//            self.deletButton =[[UIButton alloc] initWithFrame:CGRectMake(160, 80, 50, 20)];
-//                   self.deletButton.backgroundColor =[UIColor blueColor];
-//                   [self.deletButton setTitle:@"X" forState:UIControlStateNormal];
-//                   [self.deletButton setTitle:@"V" forState:UIControlStateHighlighted];
-//            
-//            [self.deletButton addTarget:self action:@selector(clickDel:) forControlEvents:UIControlEventTouchUpInside];
-//            
-//            self.deletButton.layer.cornerRadius = 10;
-//            self.deletButton.layer.masksToBounds = YES;
-//            self.deletButton;
-//        })];
-//        
+        [self.contentView addSubview:({
+            self.deletButton =[[UIButton alloc] initWithFrame:CGRectMake(160, 80, 50, 20)];
+                   self.deletButton.backgroundColor =[UIColor blueColor];
+                   [self.deletButton setTitle:@"X" forState:UIControlStateNormal];
+                   [self.deletButton setTitle:@"V" forState:UIControlStateHighlighted];
+            
+            [self.deletButton addTarget:self action:@selector(clickDel:) forControlEvents:UIControlEventTouchUpInside];
+            
+            self.deletButton.layer.cornerRadius = 10;
+            self.deletButton.layer.masksToBounds = YES;
+            self.deletButton;
+        })];
+        
+       
+        
     
        // self.RightLabel.backgroundColor=[UIColor greenColor];
         
-      //  [self.contentView addSubview:self.deletButton];
+        [self.contentView addSubview:self.deletButton];
         [self.contentView addSubview:self.LabelDetail];
         [self.contentView addSubview:self.leftLabel];
         [self.contentView addSubview:self.RightLabel];
@@ -73,10 +73,10 @@
 }
 
 
--(void) layoutTableCellWithdata:(Listitem *)data{
-    self.LabelDetail.text=data.title;
-    self.leftLabel.text = data.category;
-    self.RightLabel.text =data.author_name;
+-(void) layoutTableCell{
+    self.LabelDetail.text=@"YST 学习IOS";
+    self.leftLabel.text = @"评论数";
+    self.RightLabel.text =@"点赞数";
 }
 
 @end

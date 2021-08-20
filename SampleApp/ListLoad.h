@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
+//数据加载
 NS_ASSUME_NONNULL_BEGIN
+@class Listitem;
+typedef void(^ListitemFinish)(Boolean success,NSArray<Listitem *> *data);
 
 @interface ListLoad : NSObject
--(void) Loadlist;
+-(void) LoadlistFinshBlock:(ListitemFinish) finshblock;
 @end
 
 NS_ASSUME_NONNULL_END

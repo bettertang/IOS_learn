@@ -16,7 +16,7 @@
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate,MytableDelegate>
 
 @property(nonatomic,strong) UITableView *mytableview;
-@property(nonatomic,strong,readwrite) NSArray *Darry;
+@property(nonatomic,strong,readwrite) NSMutableArray *Darry;
 @property(nonatomic,strong,readwrite) ListLoad *listLoad;
 @end
 
@@ -30,6 +30,10 @@ NSArray  *storys;
 -(instancetype)init{
     self = [super self];
     if(self){
+        _Darry = @[].mutableCopy;
+        for(int i=0;i<5;++i){
+            [_Darry addObject:@(i)];
+        }
     }
     
     return self;
@@ -70,13 +74,7 @@ NSArray  *storys;
     _mytableview.dataSource=self;
     
     self.listLoad = [[ListLoad alloc] init];
-      __weak typeof (self) wself = self;
-  
- 
     [self.listLoad LoadlistFinshBlock:^(Boolean success, NSArray<Listitem *> * _Nonnull data) {
-        __strong typeof (self) Sself = wself;
-        Sself.Darry = data;
-        [Sself.mytableview reloadData];//这个很重要
         NSLog(@"");
     }];
     [self.view addSubview:_mytableview];
@@ -108,14 +106,12 @@ NSArray  *storys;
 
 //    NSString *story = [storys objectAtIndex:section];
     //return [[tableData objectForKey:story] count];
-    return _Darry.count;
+    return self.Darry.count;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-  
-    
-    WebViewController *newVC = [[WebViewController alloc] initWithURl:[self.Darry objectAtIndex:indexPath.row]];
+    WebViewController *newVC = [[WebViewController alloc] init];
     newVC.title = [NSString stringWithFormat:@"%ld",indexPath.row];
     [self.navigationController pushViewController:newVC animated:NO];
 }
@@ -131,8 +127,7 @@ NSArray  *storys;
         
         cell.delegate=self;
     }
-    
-    [cell layoutTableCellWithdata:[self.Darry objectAtIndex:indexPath.row]];
+    [cell layoutTableCell];
     
 //    NSString *story = [storys objectAtIndex:indexPath.section];
 //
@@ -144,17 +139,17 @@ NSArray  *storys;
 
 -(void) tableviewCell:(UITableViewCell *) inputTBview deletebutton:(UIButton *)deletbutton message:(nonnull NSString *)mes{
     NSLog(@"收到代理信息: %@",mes);
-//    DeletView *myDelView = [[DeletView alloc] initWithFrame:self.view.bounds];
-//    CGRect rec = [inputTBview convertRect:myDelView.frame toView:nil];
-//    __weak typeof (self) wself = self;
-//    [myDelView showDelView:rec.origin clickblock:^{
-//    __strong typeof (self) Sself = wself;
-//    [Sself.Darry removeLastObject];
-//    if([Sself.mytableview indexPathForCell:inputTBview]){
-//        [Sself.mytableview deleteRowsAtIndexPaths:@[[Sself.mytableview indexPathForCell:inputTBview]] withRowAnimation:UITableViewRowAnimationAutomatic];
-//                   NSLog(@"执行成功");
-//        }
-//    }];
+    DeletView *myDelView = [[DeletView alloc] initWithFrame:self.view.bounds];
+    CGRect rec = [inputTBview convertRect:myDelView.frame toView:nil];
+    __weak typeof (self) wself = self;
+    [myDelView showDelView:rec.origin clickblock:^{
+    __strong typeof (self) Sself = wself;
+    [Sself.Darry removeLastObject];
+    if([Sself.mytableview indexPathForCell:inputTBview]){
+        [Sself.mytableview deleteRowsAtIndexPaths:@[[Sself.mytableview indexPathForCell:inputTBview]] withRowAnimation:UITableViewRowAnimationAutomatic];
+                   NSLog(@"执行成功");
+        }
+    }];
 }
 
 

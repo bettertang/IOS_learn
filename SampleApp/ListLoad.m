@@ -18,7 +18,7 @@
 @implementation ListLoad
 
 
--(void) Loadlist{
+-(void) LoadlistFinshBlock:(ListitemFinish)finshblock{
     __unused NSString *InputUrl = @"https://static001.geekbang.org/univer/classes/ios_dev/lession/45/toutiao.json";
 //
 //    [[AFHTTPSessionManager manager] GET:InputUrl parameters:nil headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -43,16 +43,24 @@
          
         
         id jsonObj = [NSJSONSerialization JSONObjectWithData:data options:0 error:&JsonErr];
-        
-        Listitem *myList = [[Listitem alloc] init];
-        NSMutableArray *ListItem = @[].mutableCopy;
+    
+        NSMutableArray *ListItemArry = @[].mutableCopy;
         NSArray *dataArry = [((NSDictionary*)[((NSDictionary *)jsonObj) objectForKey:@"result"]) objectForKey:@"data"];
         
         for(NSDictionary *info in dataArry){
+            Listitem *myList = [[Listitem alloc] init];
             [myList confi:info];
-            [ListItem addObject:myList];
+            [ListItemArry addObject:myList];
             
         }
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            if(finshblock){
+                      finshblock(error==nil,ListItemArry.copy);
+                  }
+        });
+        
+      
         NSLog(@"");
     }];
 

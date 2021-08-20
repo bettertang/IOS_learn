@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class Listitem;
+
 @protocol MytableDelegate <NSObject>
 
 -(void) tableviewCell:(UITableViewCell *) inputTBview deletebutton:(UIButton *)deletbutton message:(NSString *) mes;
@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface MyTableViewCell : UITableViewCell
--(void) layoutTableCellWithdata:(Listitem *)data;
+-(void) layoutTableCell;
 @property(nonatomic,weak,readwrite) id<MytableDelegate> delegate;
 @end
 

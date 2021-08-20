@@ -8,11 +8,12 @@
 
 #import "WebViewController.h"
 #import <WebKit/WebKit.h>
-
+#import "Listitem.h"
 
 @interface WebViewController ()
 @property (nonatomic,strong) WKWebView *mywebView;
 @property (nonatomic,strong,readwrite)  UIProgressView *progressV;
+@property (nonatomic,copy,readwrite) NSString *articleUrl;
 @end
 
 @implementation WebViewController
@@ -21,16 +22,23 @@
     [self.mywebView removeObserver:self forKeyPath:@"estimatedProgress"];
 }
 
+-(instancetype) initWithURl:(Listitem *) WebListitem{
+    self.articleUrl = WebListitem.url;
+    
+    return self;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+
     self.mywebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 88, self.view.frame.size.width, self.view.frame.size.height-88)];
     [self.view addSubview:self.mywebView];
-    NSString *inputUrl = @"https://www.baidu.com";
+   // NSString *inputUrl = @"https://www.baidu.com";
     self.progressV = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 88, self.view.frame.size.width, 20)];
     [self.view addSubview:self.progressV];
-    [self.mywebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:inputUrl]]];
+    [self.mywebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.articleUrl]]];
     
     [self.mywebView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
 }
