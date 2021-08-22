@@ -19,6 +19,10 @@
 		16DE577426CAC24C001436B0 /* DeletView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DE577326CAC24C001436B0 /* DeletView.m */; };
 		16DE577726CC1ACF001436B0 /* ListLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DE577626CC1ACF001436B0 /* ListLoad.m */; };
 		16DE577E26CD7507001436B0 /* Listitem.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DE577D26CD7507001436B0 /* Listitem.m */; };
+		16DE578926D013E2001436B0 /* ICONBLACK.png in Resources */ = {isa = PBXBuildFile; fileRef = 16DE578826D013E2001436B0 /* ICONBLACK.png */; };
+		16DE578B26D15CEA001436B0 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 16DE578A26D15CEA001436B0 /* icon.bundle */; };
+		16DE578E26D15D3E001436B0 /* VideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DE578D26D15D3E001436B0 /* VideoCollectionViewCell.m */; };
+		16DE579226D2595F001436B0 /* VideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DE579126D2595F001436B0 /* VideoPlayer.m */; };
 		1EECB7055CD8865D6095104C /* libPods-SampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67A77F12AACED9CA409E6A49 /* libPods-SampleApp.a */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +51,12 @@
 		16DE577626CC1ACF001436B0 /* ListLoad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListLoad.m; sourceTree = "<group>"; };
 		16DE577C26CD7507001436B0 /* Listitem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Listitem.h; sourceTree = "<group>"; };
 		16DE577D26CD7507001436B0 /* Listitem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Listitem.m; sourceTree = "<group>"; };
+		16DE578826D013E2001436B0 /* ICONBLACK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICONBLACK.png; sourceTree = "<group>"; };
+		16DE578A26D15CEA001436B0 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = icon.bundle; sourceTree = "<group>"; };
+		16DE578C26D15D3E001436B0 /* VideoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoCollectionViewCell.h; sourceTree = "<group>"; };
+		16DE578D26D15D3E001436B0 /* VideoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoCollectionViewCell.m; sourceTree = "<group>"; };
+		16DE579026D2595F001436B0 /* VideoPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoPlayer.h; sourceTree = "<group>"; };
+		16DE579126D2595F001436B0 /* VideoPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPlayer.m; sourceTree = "<group>"; };
 		67A77F12AACED9CA409E6A49 /* libPods-SampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C47580D29C3FD8E50829EEB /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +94,8 @@
 		16DE572726C426D0001436B0 /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				16DE578A26D15CEA001436B0 /* icon.bundle */,
+				16DE578826D013E2001436B0 /* ICONBLACK.png */,
 				16DE577826CD72A4001436B0 /* News */,
 				16DE572826C426D0001436B0 /* AppDelegate.h */,
 				16DE577526CC1ACF001436B0 /* ListLoad.h */,
@@ -101,6 +113,10 @@
 				16DE577026C983BB001436B0 /* WebViewController.m */,
 				16DE577226CAC24C001436B0 /* DeletView.h */,
 				16DE577326CAC24C001436B0 /* DeletView.m */,
+				16DE578C26D15D3E001436B0 /* VideoCollectionViewCell.h */,
+				16DE578D26D15D3E001436B0 /* VideoCollectionViewCell.m */,
+				16DE579026D2595F001436B0 /* VideoPlayer.h */,
+				16DE579126D2595F001436B0 /* VideoPlayer.m */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -217,8 +233,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16DE578B26D15CEA001436B0 /* icon.bundle in Resources */,
 				16DE573826C426D4001436B0 /* LaunchScreen.storyboard in Resources */,
 				16DE573526C426D4001436B0 /* Assets.xcassets in Resources */,
+				16DE578926D013E2001436B0 /* ICONBLACK.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +277,10 @@
 				16DE573026C426D0001436B0 /* ViewController.m in Sources */,
 				16DE577726CC1ACF001436B0 /* ListLoad.m in Sources */,
 				16DE572A26C426D0001436B0 /* AppDelegate.m in Sources */,
+				16DE578E26D15D3E001436B0 /* VideoCollectionViewCell.m in Sources */,
 				16DE576E26C90DF1001436B0 /* MyTableViewCell.m in Sources */,
 				16DE573B26C426D4001436B0 /* main.m in Sources */,
+				16DE579226D2595F001436B0 /* VideoPlayer.m in Sources */,
 				16DE576B26C8E3F2001436B0 /* ScrollController.m in Sources */,
 				16DE577E26CD7507001436B0 /* Listitem.m in Sources */,
 				16DE577426CAC24C001436B0 /* DeletView.m in Sources */,

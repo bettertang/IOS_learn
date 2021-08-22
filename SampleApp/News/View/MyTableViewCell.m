@@ -14,6 +14,8 @@
 @property (nonatomic,strong,readwrite) UILabel *LabelDetail;
 @property (nonatomic,strong,readwrite) UILabel *leftLabel;
 @property (nonatomic,strong,readwrite) UILabel *RightLabel;
+@property (nonatomic, strong, readwrite) UIImageView *rightImageView;
+
 
 @property (nonatomic,strong) UIButton *deletButton;
 
@@ -38,6 +40,13 @@
         self.RightLabel.textColor = [UIColor grayColor];
         
         
+        [self.contentView addSubview:({
+                 self.rightImageView = [[UIImageView alloc] initWithFrame:CGRectMake(300, 15, 100, 70)];
+                 self.rightImageView.contentMode = UIViewContentModeScaleAspectFit;
+                 self.rightImageView;
+             })];
+        
+        
 //        [self.contentView addSubview:({
 //            self.deletButton =[[UIButton alloc] initWithFrame:CGRectMake(160, 80, 50, 20)];
 //                   self.deletButton.backgroundColor =[UIColor blueColor];
@@ -58,6 +67,11 @@
         [self.contentView addSubview:self.LabelDetail];
         [self.contentView addSubview:self.leftLabel];
         [self.contentView addSubview:self.RightLabel];
+        
+        self.RightLabel =[[UILabel alloc] initWithFrame:CGRectMake(100, 80, 50, 20)];
+               self.RightLabel.font =  [UIFont systemFontOfSize:12];
+               self.RightLabel.textColor = [UIColor grayColor];
+               
        
     }
     return self;
@@ -77,6 +91,23 @@
     self.LabelDetail.text=data.title;
     self.leftLabel.text = data.category;
     self.RightLabel.text =data.author_name;
+    
+//    NSThread *ImageThread = [[NSThread alloc] initWithBlock:^{
+//        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:data.thumbnail_pic_s03]]];
+//           self.rightImageView.image = image;
+//    }];
+//    ImageThread.name=@"Run_ImageThread";
+//    [ImageThread start];
+//
+     dispatch_queue_global_t DownloadThread = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_async(DownloadThread, ^{
+          UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:data.thumbnail_pic_s03]]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+              self.rightImageView.image = image;
+        });
+    });
+    
 }
 
 @end
