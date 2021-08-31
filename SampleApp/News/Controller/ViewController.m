@@ -16,7 +16,7 @@
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate,MytableDelegate>
 
 @property(nonatomic,strong) UITableView *mytableview;
-@property(nonatomic,strong,readwrite) NSArray *Darry;
+
 @property(nonatomic,strong,readwrite) ListLoad *listLoad;
 @end
 
@@ -80,6 +80,13 @@ NSArray  *storys;
         NSLog(@"");
     }];
     [self.view addSubview:_mytableview];
+    
+    
+    UIButton *testButton = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 50)];
+    [testButton setTitle:@"Test" forState:UIControlStateNormal];
+    [testButton addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
+    testButton.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:testButton];
     
    tableData = [NSDictionary dictionaryWithObjectsAndKeys:
    [NSArray arrayWithObjects:@"孙悟空" , @"猪八戒", @"牛魔王"
@@ -185,5 +192,19 @@ NSArray  *storys;
 //
 //}
 
+-(NSInteger) TestMethod:( NSInteger) inputIN{
+    NSInteger returnIN = inputIN;
+    return returnIN;
+}
+
+-(void) test{
+    NSLog(@"修改后的值是%@",[self TestMethod:@"abc"]);
+    
+   // NSLog(@"打印的值是%@",)
+    NSLog(@"Darry的值是%@",[self.Darry objectAtIndex:0]);
+    NSLog(@"book的值是%@",self.book);
+    [self.mytableview reloadData];//这个很重要
+    NSLog(@"执行test");
+}
 
 @end

@@ -1,0 +1,21 @@
+${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources.sh
+${PODS_ROOT}/NewMonkey/NewMonkey/Components/ANR/UserInterface/NewMonkeyANRCell.xib
+${PODS_ROOT}/NewMonkey/NewMonkey/Components/Crash/UserInterface/NewMonkeyCrashCell.xib
+${PODS_ROOT}/NewMonkey/NewMonkey/Components/Crash/UserInterface/NewMonkeyCrashContentCell.xib
+${PODS_ROOT}/NewMonkey/NewMonkey/Components/FunctionTest/UserInterface/js/newmonkey_index.html
+${PODS_ROOT}/NewMonkey/NewMonkey/Components/General/UserInterface/Controls/NewMonkeyFilterView/NewMonkeyFilterLabelCell.xib
+${PODS_ROOT}/NewMonkey/NewMonkey/Components/General/UserInterface/Controls/NewMonkeyFilterView/NewMonkeyFilterTextFieldCell.xib
+${PODS_ROOT}/NewMonkey/NewMonkey/Components/General/UserInterface/Controls/NewMonkeySubTitleTableViewCell/NewMonkeySubTitleTableViewCell.xib
+${PODS_ROOT}/NewMonkey/NewMonkey/Components/Network/UserInterface/ImageDetection/NewMonkeyImageDetectionCell.xib
+${PODS_ROOT}/NewMonkey/NewMonkey/Components/Network/UserInterface/ImageDetection/NewMonkeyImageDetectionImageCell.xib
+${PODS_ROOT}/NewMonkey/NewMonkey/Components/Network/UserInterface/NetworkCap/NewMonkeyNetworkCell.xib
+${PODS_ROOT}/NewMonkey/NewMonkey/Components/Network/UserInterface/NetworkCap/NewMonkeyNetworkImageCell.xib
+${PODS_ROOT}/NewMonkey/NewMonkey/Components/OOM/UserInterface/NewMonkeyOOMCell.xib
+${PODS_ROOT}/NewMonkey/NewMonkey/Components/Sandbox/UserInterface/NewMonkeySandboxCell.xib
+${PODS_ROOT}/NewMonkey/NewMonkey/Components/WebView/JSError/UserInterface/NewMonkeyJSErrorCell.xib
+${PODS_ROOT}/NewMonkey/NewMonkey/Components/WebView/Performance/UserInterface/NewMonkeyWebViewCell.xib
+${PODS_ROOT}/NewMonkey/NewMonkey/Components/WebView/Performance/UserInterface/NewMonkeyWebViewContentDetailCell.xib
+${PODS_ROOT}/NewMonkey/NewMonkey/Monkey/CocosMonkey/js/cc_driver_lib.js
+${PODS_ROOT}/NewMonkey/NewMonkey/Monkey/CocosMonkey/js/monkey_driver.js
+${PODS_ROOT}/NewMonkey/NewMonkey/Monkey/UI/NewMonkeyMonkeyScriptCell.xib
+${PODS_ROOT}/NewMonkey/NewMonkey/Components/General/UserInterface/Resources/NewMonkeyTool.bundle

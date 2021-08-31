@@ -12,5 +12,8 @@
 @property (nonatomic, assign) NSUInteger count;
 @property (nonatomic, readonly) NSArray *author;
 @property (nonatomic, readonly) NSDictionary *book;
+@property(nonatomic,strong,readwrite) NSArray *Darry;
+-(NSInteger ) TestMethod:(NSInteger ) inputIN;
+-(void) test;
 @end
 

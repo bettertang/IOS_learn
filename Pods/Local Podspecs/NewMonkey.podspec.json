@@ -1,0 +1,73 @@
+{
+  "name": "NewMonkey",
+  "version": "1.1.0",
+  "summary": "NewMonkey is a random test tool.",
+  "homepage": "http://git.code.oa.com/NewMonkey/NewMonkey",
+  "license": "MIT",
+  "authors": {
+    "haleli": "haleli@tencent.com"
+  },
+  "social_media_url": "http://git.code.oa.com/NewMonkey",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "git": "http://git.code.oa.com/NewMonkey/NewMonkey.git",
+    "tag": "1.1.0"
+  },
+  "requires_arc": true,
+  "subspecs": [
+    {
+      "name": "Core",
+      "public_header_files": "NewMonkey/{Components,Monkey,CustomThirdParty}/**/*.h",
+      "source_files": "NewMonkey/{Components,Monkey,CustomThirdParty}/**/*.{h,m,mm,mlmodel,c}",
+      "resources": "NewMonkey/{Components,Monkey,CustomThirdParty}/**/*.{xib,storyboard,bundle,js,html}",
+      "libraries": [
+        "z",
+        "iconv"
+      ],
+      "frameworks": [
+        "IOKit",
+        "Security"
+      ],
+      "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES",
+        "GCC_PREPROCESSOR_DEFINITIONS": "HAVE_INTTYPES_H HAVE_PKCRYPT HAVE_STDINT_H HAVE_WZAES HAVE_ZLIB"
+      }
+    },
+    {
+      "name": "ThirdParty",
+      "dependencies": {
+        "KIF": [
+
+        ]
+      },
+      "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES",
+        "GCC_PREPROCESSOR_DEFINITIONS": "HAVE_INTTYPES_H HAVE_PKCRYPT HAVE_STDINT_H HAVE_WZAES HAVE_ZLIB"
+      }
+    },
+    {
+      "name": "LocalThirdParty",
+      "public_header_files": "NewMonkey/ThirdParty/**/*.h",
+      "source_files": "NewMonkey/ThirdParty/**/*.{h,m,mm,mlmodel,c}",
+      "resources": "NewMonkey/ThirdParty/**/*.{xib,storyboard,bundle,js,html}",
+      "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES",
+        "GCC_PREPROCESSOR_DEFINITIONS": "HAVE_INTTYPES_H HAVE_PKCRYPT HAVE_STDINT_H HAVE_WZAES HAVE_ZLIB"
+      }
+    },
+    {
+      "name": "DebugTool",
+      "dependencies": {
+        "FLEX": [
+
+        ]
+      },
+      "pod_target_xcconfig": {
+        "DEFINES_MODULE": "YES",
+        "GCC_PREPROCESSOR_DEFINITIONS": "HAVE_INTTYPES_H HAVE_PKCRYPT HAVE_STDINT_H HAVE_WZAES HAVE_ZLIB"
+      }
+    }
+  ]
+}

@@ -35,7 +35,7 @@
 
     self.mywebView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 88, self.view.frame.size.width, self.view.frame.size.height-88)];
     [self.view addSubview:self.mywebView];
-   // NSString *inputUrl = @"https://www.baidu.com";
+    NSString *inputUrl = @"https://www.baidu.com";
     self.progressV = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 88, self.view.frame.size.width, 20)];
     [self.view addSubview:self.progressV];
     [self.mywebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.articleUrl]]];
